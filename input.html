@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sun Dial</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <style>
+		.bg {
+			background: url('power-poles.jpg') no-repeat center center;
+			position: fixed;
+			width: 100%;
+			height: 350px; /*same height as jumbotron */
+			top:0;
+			left:0;
+			z-index: -1;
+		}
+
+		.jumbotron {
+			height: 350px;
+			color: white;
+			text-shadow: #333 0 1px 1px;
+			background:transparent;
+		}
+        
+    .links { 
+			border: 1px solid #eee; 
+			border-radius: 10px; 
+			padding: 20px; 
+			font-size: 125%; 
+			text-align: center;
+			background-color: #ffaa00; 
+			color: #333;
+		}
+		.links img { padding-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+	<div class="bg"></div>
+  <div class="jumbotron">
+    <div class="container">
+      <h1><img src="sundial_logo-01.png" width="200" height="300" alt="Sun Dial">SUNDIAL</h1>
+    </div>  
+  </div>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <form id="form01" class="form-horizontal">
+
+          <div class="form-group">
+            <label for="inputAddress" class="col-sm-2 control-label">Address</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputAddress" placeholder="Address">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputCity" class="col-sm-2 control-label">City</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputCity" placeholder="City">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputState" class="col-sm-2 control-label">State</label>
+            <div class="col-sm-10">            
+              <select name="state" id="inputState" class="form-control">
+                <option value="AL">AL</option>
+                <option value="AK">AK</option>
+                <option value="AZ">AZ</option>
+                <option value="AR">AR</option>
+                <option value="CA" selected="selected">CA</option>
+                <option value="CO">CO</option>
+                <option value="CT">CT</option>
+                <option value="DE">DE</option>
+                <option value="DC">DC</option>
+                <option value="FL">FL</option>
+                <option value="GA">GA</option>
+                <option value="HI">HI</option>
+                <option value="ID">ID</option>
+                <option value="IL">IL</option>
+                <option value="IN">IN</option>
+                <option value="IA">IA</option>
+                <option value="KS">KS</option>
+                <option value="KY">KY</option>
+                <option value="LA">LA</option>
+                <option value="ME">ME</option>
+                <option value="MD">MD</option>
+                <option value="MA">MA</option>
+                <option value="MI">MI</option>
+                <option value="MN">MN</option>
+                <option value="MS">MS</option>
+                <option value="MO">MO</option>
+                <option value="MT">MT</option>
+                <option value="NE">NE</option>
+                <option value="NV">NV</option>
+                <option value="NH">NH</option>
+                <option value="NJ">NJ</option>
+                <option value="NM">NM</option>
+                <option value="NY">NY</option>
+                <option value="NC">NC</option>
+                <option value="ND">ND</option>
+                <option value="OH">OH</option>
+                <option value="OK">OK</option>
+                <option value="OR">OR</option>
+                <option value="PA">PA</option>
+                <option value="RI">RI</option>
+                <option value="SC">SC</option>
+                <option value="SD">SD</option>
+                <option value="TN">TN</option>
+                <option value="TX">TX</option>
+                <option value="UT">UT</option>
+                <option value="VT">VT</option>
+                <option value="VA">VA</option>
+                <option value="WA">WA</option>
+                <option value="WV">WV</option>
+                <option value="WI">WI</option>
+                <option value="WY">WY</option>
+              </select>
+
+            </div>
+          </div>  
+<!--
+          <div class="form-group">
+            <label for="inputZip" class="col-sm-2 control-label">Zip</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="inputZip" size="5" placeholder="Zip">
+            </div>
+          </div>
+-->
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Electric Bill </label>
+            <div class="col-sm-10">
+              <label class="sr-only" for="inputElecticBill">Amount (in dollars)</label>
+              <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input type="text" class="form-control" id="inputElecticBill" placeholder="Amount">
+          <!--      <div class="input-group-addon">.00</div> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputMonth" class="col-sm-2 control-label">For the month of</label>
+            <div class="col-sm-10">
+              <select id="inputMonth" class="form-control">
+                <option value="0">Janauary</option>
+                <option value="1">Feburary</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <p><small>*All fields are required</small></p>
+            </div>
+          </div>
+ 
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" id="go" class="btn btn-default">Estimate</button>
+            </div>
+          </div>
+					
+        </form>
+        <hr>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-offset-2 col-sm-10">
+          <h3><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Estimate savings - </h3>
+					<h4 id="fullAddress"></h4>
+          <p>In <strong><span id="billMonth"> the month entered </span></strong> you spent $<span id="electricBill"></span>.</p>
+          <p>Using solar, you could have saved <strong>$<span id="moneySaved">0 </span></strong></p>
+          <p>To find out more click the follow - </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          
+          <a href="http://energychallenge.energy.gov/a/dtd/Residential-Solar-Calculator/12930-26122" target="_blank"><div class="links"><img src="icons/calculator.png" width="100" height="100" /><br>Estimate your return on investment for installing residential solar panels</div></a>
+        </div>
+
+        <div class="col-sm-4">
+          
+          <a href="http://www.gosolarcalifornia.ca.gov/csi/rebates.php" target="_blank"><div class="links"><img src="icons/rebate.png" width="100" height="100" /><br>Find the currently applicable rebate level in your area</div></a>
+        </div>
+
+        <div class="col-sm-4">
+          
+          <a href="https://www.energystar.gov/" target="_blank"><div class="links"><img src="icons/energystar.png" width="100" height="100" /><br>Assess the energy efficiency of your home and see how it measures up</div></a>
+        </div>
+      </div>
+      </div>
+
+      
+  <!--     <div class="col-sm-5">
+        <h3><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Chart comparison - </h3>
+        
+      </div>
+     <div class="col-sm-4">
+        <h3><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Find out more - </h3>        
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      </div> -->
+    </div>
+  </div>
+</div> <!--
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>  -->
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
